@@ -1,0 +1,154 @@
+/* SSA Paperwork Calm Guide — warm, readable, print-friendly. */
+:root {
+  --bg: #faf7f2;
+  --paper: #ffffff;
+  --ink: #34323a;
+  --soft: #6d6a75;
+  --accent: #3f5e78;      /* calm denim blue */
+  --accent-soft: #e8eef3;
+  --line: #e4ded4;
+  --warn: #8a5a2b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.65 Georgia, "Iowan Old Style", "Times New Roman", serif;
+}
+
+a { color: var(--accent); }
+a:hover { text-decoration-thickness: 2px; }
+
+.site-header {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.9rem 1.4rem;
+}
+.site-header .brand {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+.site-header .tagline {
+  margin-left: 0.8rem;
+  opacity: 0.75;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.layout {
+  display: flex;
+  max-width: 70rem;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+nav.sidebar {
+  flex: 0 0 15rem;
+  padding: 1.6rem 1rem;
+  border-right: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+nav.sidebar h2 {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+nav.sidebar ul { list-style: none; padding: 0; margin: 0.5rem 0; }
+nav.sidebar li { margin: 0.3rem 0; }
+nav.sidebar li a {
+  text-decoration: none;
+  display: block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+nav.sidebar li a:hover { background: var(--accent-soft); }
+nav.sidebar li a.active { background: var(--accent-soft); font-weight: bold; }
+nav.sidebar .disclaimer {
+  margin-top: 1rem;
+  padding: 0.6rem;
+  background: var(--accent-soft);
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+main {
+  flex: 1;
+  padding: 1.8rem 2.4rem 2.5rem;
+  max-width: 46rem;
+  background: var(--paper);
+  min-height: 100vh;
+}
+
+h1 { font-size: 1.7rem; margin: 0.2rem 0 1rem; line-height: 1.25; }
+h2 { border-bottom: 1px solid var(--line); padding-bottom: 0.25rem; }
+h3 { color: var(--accent); }
+
+blockquote {
+  margin: 1.2rem 0;
+  padding: 0.75rem 1rem;
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+}
+blockquote p { margin: 0.2rem 0; }
+
+table {
+  border-collapse: collapse;
+  margin: 1.2rem 0;
+  font-size: 0.95rem;
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.4rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--accent-soft); }
+
+pre {
+  background: #2f3336;
+  color: #e8e6e1;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+code {
+  font-family: ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
+  background: #f1ede6;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+pre code { background: none; padding: 0; color: inherit; }
+
+hr { border: none; border-top: 1px solid var(--line); margin: 1.5rem 0; }
+
+.page-footer {
+  margin-top: 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--soft);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 52rem) {
+  .layout { flex-direction: column; }
+  nav.sidebar { border-right: none; border-bottom: 1px solid var(--line); flex-basis: auto; }
+  main { padding: 1.4rem; min-height: auto; }
+}
+
+@media print {
+  body { background: #fff; font-size: 11pt; }
+  .site-header, nav.sidebar, .page-footer { display: none; }
+  main { padding: 0; max-width: none; background: #fff; }
+  pre { background: #f3f3f3; color: #222; }
+  a { color: inherit; }
+}
